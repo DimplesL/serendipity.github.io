@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)https://cdpn.io/mkkhedawat/fullembedgrid/MQgBgd?type=embed&animations=run -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+<meta name="apple-mobile-web-app-title" content="CodePen">
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+<title>CodePen - JSBasics : bind - I</title>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body translate="no">
+<script src="./stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+<script id="rendered-js">
+// Set 1
+var name = 'manish';
+var jena = {
+  name: 'jena' };
+
+var monica = {
+  name: 'monica' };
+
+
+function whoAmI()
+{
+  document.write('You are ' + this.name + '<br/>');
+}
+
+whoAmI(); // this is window
+var boundJenaWhoAmI = whoAmI.bind(jena); // this set to ema
+boundJenaWhoAmI(); // this is ema
+whoAmI.bind(monica)(); // Observe, bind doesn't invoke function, it returns a function
+
+
+
+// Set 2
+function howOldAmI()
+{
+  document.write('You are ' + this.age + ' years old. <br/>');
+}
+
+var age = 15;
+var ema = {
+  age: 16,
+  howOldAmI: howOldAmI };
+
+var angela = {
+  age: 17,
+  howOldAmI: howOldAmI.bind(ema) };
+
+
+howOldAmI(); // Context is global i.e. window, so window.age will be used
+ema.howOldAmI(); // ema is calling, so ema is context, ema.age will be used
+angela.howOldAmI(); // angela is calling, so angela is context, but we have bind it to ema, ema.age will be used
+//# sourceURL=pen.js
+    </script>You are manish<br>You are jena<br>You are monica<br>You are 15 years old. <br>You are 16 years old. <br>You are 16 years old. <br>
+<script src="./iframeRefreshCSS-d00a5a605474f5a5a14d7b43b6ba5eb7b3449f04226e06eb1b022c613eabc427.js"></script>
+
+
+</body></html>

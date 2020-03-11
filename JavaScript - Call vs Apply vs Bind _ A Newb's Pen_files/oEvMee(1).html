@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)https://cdpn.io/mkkhedawat/fullembedgrid/oEvMee?type=embed&animations=run -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+<meta name="apple-mobile-web-app-title" content="CodePen">
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+<title>CodePen - JSBasics : bind - II</title>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body translate="no">
+<script src="./stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+<script id="rendered-js">
+var name = 'Manish';
+function multiply(a, b) {
+  document.write('Hey ' + this.name + ', Mulplication of ' + a + ' and ' + b + ' is ' + a * b + '<br/>');
+}
+
+var ema = {
+  name: 'Ema' };
+
+
+multiply(2, 3);
+var multiplyBy3 = multiply.bind(ema, 3); // bind first argument to 3, change this to ema
+multiplyBy3(3);
+var multiplyBy3NoThisChange = multiply.bind(this, 3); // bind first argument to 3, keep 'this' as current only
+multiplyBy3NoThisChange(5);
+multiply4and4 = multiply.bind(this, 4, 4); // bind arguments to 4 and 4
+multiply4and4();
+//# sourceURL=pen.js
+    </script>Hey Manish, Mulplication of 2 and 3 is 6<br>Hey Ema, Mulplication of 3 and 3 is 9<br>Hey Manish, Mulplication of 3 and 5 is 15<br>Hey Manish, Mulplication of 4 and 4 is 16<br>
+<script src="./iframeRefreshCSS-d00a5a605474f5a5a14d7b43b6ba5eb7b3449f04226e06eb1b022c613eabc427.js"></script>
+
+
+</body></html>
